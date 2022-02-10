@@ -74,15 +74,26 @@ have two items in your data folder, a zipped file titled 'ec_postpro_merged'
 and a '.csv' file with the same name. At this point the zipped file can be 
 deleted. 
 
-### Mac/Windows
+### Mac
 
 Using an unzipping tool of your choice. On Mac the default is 'Archive Utility'.
-Linux does not have a default unzip tool. For help with unzipping files, you 
-can follow [this](https://linuxize.com/post/how-to-unzip-files-in-linux/) 
-tutorial. This tool will automatically unzip the files to a folder with the name 
-of the original zipped file. To achieve the same results as the windows set up, 
-the contents of this folder will needed to be relocated one directory up. At this
-point you may delete the folder that our data was extracted into. Now you 
-should have two items in the '*/data*' folder: a zipped file titled 
-'ec_postpro_merged' and a '.csv' file with the same name. You may delete the 
-zipped file at this point.
+Linux does not have a default unzip tool. This tool will automatically unzip the 
+files to a folder with the name of the original zipped file. To achieve the same 
+results as the windows set up, the contents of this folder will needed to be 
+relocated one directory up. At this point you may delete the folder that our data
+was extracted into. Now you should have two items in the '*/data*' folder: a 
+zipped file titled 'ec_postpro_merged' and a '.csv' file with the same name. 
+You may delete the zipped file at this point.
+
+### Linux 
+For help with unzipping files, you can follow [this](https://linuxize.com/post/how-to-unzip-files-in-linux/) 
+tutorial. Now you should have the 'ec_postpro_merged' file extracted from the 
+zipped folder. You can remove the zipped file from the '*/data*' folder by 
+typing the following into the command line:
+
+```
+cd /path/to/local/cloned/repo/data
+rm ec_postpro_merged.zip
+```
+
+Note: you must have write permissions in this folder to perform this removeal step
