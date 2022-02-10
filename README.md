@@ -23,6 +23,15 @@ terminal. Make sure you are in a folder or directory on your local
 machine that you have write access to and are comfortable downloading 
 this repository to. 
 
+In a terminal type the following:
+
+```
+cd /path/to/local/cloned/repo
+```
+
+'/path/to/local/cloned/repo' can be any folder of your choice that
+you have write access to.
+
 ```
 git clone git@github.com:DylanShadduckUCD/CNN-Research.git
 ```
@@ -52,4 +61,26 @@ folder within the data folder of this repository. This is necessary such
 that the jupyter notebook for this project runs seemlessly. Alternatively,
 you may unzip the data wherever you would like and make sure to update the
 path to the dataset in the jupyter notebook titled *CNN_vs_CS.ipynb* in the 
-*/resources* folder.
+'*/resources*' folder.
+
+### Windows
+
+To extract the zipped data, navigate to the '*/data*' folder and right click
+on '*ec_postpro_merged.zip*'. Select extract all and make sure the destination
+to extract files is the same as the location to your data folder. This location
+should be '/path/to/local/cloned/repo/data'. Note, the default location will 
+include another folder within data labeled 'ec_postpro_merged'. You should now
+have two items in your data folder, a zipped file titled 'ec_postpro_merged' 
+and a '.csv' file with the same name. At this point the zipped file can be 
+deleted. 
+
+### Mac/Windows
+
+Using an unzipping tool of your choice. On Mac the default is 'Archive Utility'.
+This tool will automatically unzip the files to a folder with the name of the 
+original zipped file. To achieve the same results as the windows set up, the
+contents of this folder will needed to be relocated one directory up. At this
+point you may delete the folder that our data was extracted into. Now you 
+should have two items in the '*/data*' folder: a zipped file titled 
+'ec_postpro_merged' and a '.csv' file with the same name. You may delete the 
+zipped file at this point.
