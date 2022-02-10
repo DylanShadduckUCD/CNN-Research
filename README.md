@@ -128,3 +128,16 @@ Ensure that if you are running this notebook from within colab that you update t
 notebook to reflect this. In the second code cell, change the boolean variable
 'using_colab' to True. Also ensure that the 'google_drive_dir" is updated to reflect
 the folder you placed this repository data in.
+
+## CNN Pipeline
+
+In this section I will breifly cover the methods used to prepare the dataset for 
+CNN training and describe the CNN model and how to use it.
+
+### Data Preparation
+
+Once the ec_postpro_merged dataset has been loaded into the notebook as a pandas
+dataframe, there is some work to be done to prepare this raw dataset for CNN 
+training. To start I have narrowed my focus from the 26 available columns down
+to just one. Each element in the column represents the salinity of the selected
+station in $/mu S/cm$
