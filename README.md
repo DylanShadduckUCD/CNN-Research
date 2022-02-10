@@ -77,9 +77,11 @@ deleted.
 ### Mac/Windows
 
 Using an unzipping tool of your choice. On Mac the default is 'Archive Utility'.
-This tool will automatically unzip the files to a folder with the name of the 
-original zipped file. To achieve the same results as the windows set up, the
-contents of this folder will needed to be relocated one directory up. At this
+Linux does not have a default unzip tool. For help with unzipping files, you 
+can follow [this](https://linuxize.com/post/how-to-unzip-files-in-linux/) 
+tutorial. This tool will automatically unzip the files to a folder with the name 
+of the original zipped file. To achieve the same results as the windows set up, 
+the contents of this folder will needed to be relocated one directory up. At this
 point you may delete the folder that our data was extracted into. Now you 
 should have two items in the '*/data*' folder: a zipped file titled 
 'ec_postpro_merged' and a '.csv' file with the same name. You may delete the 
