@@ -138,6 +138,43 @@ CNN training and describe the CNN model and how to use it.
 
 Once the ec_postpro_merged dataset has been loaded into the notebook as a pandas
 dataframe, there is some work to be done to prepare this raw dataset for CNN 
-training. To start I have narrowed my focus from the 26 available columns down
+training. 
+
+To start I have narrowed my focus from the 26 available columns down
 to just one. Each element in the column represents the salinity of the selected
-station in $/mu S/cm$
+station in micro S/cm (micro Siemens per centimeter). One observation is that 
+there are a large number of entries with extremely large negative values (on the
+order of -1e38). micro S/cm is a measurement of conductivity to indicate salinity
+and therefore can't have negative values. These observations are likely an error
+on the data recording side and need to be replaced with nans. 
+
+The next task is to accumulate sequential data. The CNN model will be trained on
+windows of 500 samples with some portion of those 500 missing. To properly evaluate
+the success of the CNN, we need ground truth data to start with. This means searching
+through the dataset of our selected column and keeping a subset where each entry is
+a vector of length 500 sequential salinity values. This ensures that the CNN is trained
+on sequential data and can identify relevant time domain patterns to accurately 
+predict and fill in missing values. The output of this step should be a large matrix
+of 500 sample vectors.
+
+Following sample selection, the dataset must be scaled. The reason for this has to
+do with the activation function used by the convolutional layers of the CNN. The
+activation function we have chosen is the rectified linear unit or (RELU) function.
+This function is defined for all positive values, but it can more quickly produce
+accurate gradients for small values. So, to speed up the training of our network
+the data is scaled between a range of 0 to 1 following a linear transformation.
+
+Next we must mask our dataset. This is needed for training so that the input 
+data has some missing values and we retain knowledge of the original values that
+were removed. This allows for accurate evaluation of the network after training.
+You can see that there are two options for data masking: WRITE_TO_CSV and READ_FROM_CSV.
+These options are in place for the reason of sharing data between colleagues. 
+Another colleague of mine is working on the same problem using compressed sensing
+and the best way to evaluate the performance of the two methods agaist one another is
+to ensure that we are training and testing our models on the exact same data. 
+To use the data further along the pipeline, you must first write the mask and data
+to seperate csv files. All subsequent runs can then use the same data and mask files
+to train the CNN.
+
+Finally the data is split into two sets: one for training and another for testing.
+
