@@ -51,4 +51,5 @@ the dataset has been compressed into a zip folder. You must unzip this
 folder within the data folder of this repository. This is necessary such
 that the jupyter notebook for this project runs seemlessly. Alternatively,
 you may unzip the data wherever you would like and make sure to update the
-path to the dataset in the jupyter notebook titled *CNN_vs_CS.ipynb*
+path to the dataset in the jupyter notebook titled *CNN_vs_CS.ipynb* in the 
+*/resources* folder.
