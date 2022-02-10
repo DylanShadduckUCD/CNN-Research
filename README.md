@@ -53,7 +53,7 @@ already installed. Now you can clone the repository following the
 same steps as outlined in the Mac/Linux section
 
 
-## Acessing Data
+## Accessing Data
 
 The dataset for this project is exceptionally large. For that reason
 the dataset has been compressed into a zip folder. You must unzip this
@@ -97,3 +97,34 @@ rm ec_postpro_merged.zip
 ```
 
 Note: you must have write permissions in this folder to perform this removeal step
+
+## Running CNN
+
+### Local Jupyter Notebook
+
+This is my preferred method for running the CNN. To run the notebook 
+several dependencies must be met
+
+#### Python Package Dependencies
+* Jupyter Notebook 6.4.3+
+* TensorFlow 2.3+
+* Numpy 1.21.2+
+* Pandas 1.2.4+
+* Matplotlib 3.4.2+
+* Scikit-Learn 0.24.2+
+
+Once these dependencies have been met. Open a jupyter notebook session in 
+'/path/to/local/cloned/repo' directory. 
+
+### Google Colab
+
+To avoid dependency issues, this repository in its current state can be 
+added to google drive (anywhere you like) and then the notebook file can be run
+as a google colab document. Google colab operates very similarly to a local 
+jupyter notebook, but the session where the python kernel is hosted does not exist
+on your local machine, but rather it is hosted by google on a remote server.
+
+Ensure that if you are running this notebook from within colab that you update the
+notebook to reflect this. In the second code cell, change the boolean variable
+'using_colab' to True. Also ensure that the 'google_drive_dir" is updated to reflect
+the folder you placed this repository data in.
