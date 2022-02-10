@@ -18,7 +18,10 @@ make better informed predicitons.
 
 First, clone this repository using git. You can either clone using ssh
 or by using your github username and password. If you already have
-an ssh key added to your github account type the following 
+an ssh key added to your github account type the following into the 
+terminal. Make sure you are in a folder or directory on your local 
+machine that you have write access to and are comfortable downloading 
+this repository to. 
 
 ```
 git clone git@github.com:DylanShadduckUCD/CNN-Research.git
