@@ -43,3 +43,12 @@ a bash terminal (similar to Mac and Linux) and has the git package
 already installed. Now you can clone the repository following the 
 same steps as outlined in the Mac/Linux section
 
+
+## Acessing Data
+
+The dataset for this project is exceptionally large. For that reason
+the dataset has been compressed into a zip folder. You must unzip this
+folder within the data folder of this repository. This is necessary such
+that the jupyter notebook for this project runs seemlessly. Alternatively,
+you may unzip the data wherever you would like and make sure to update the
+path to the dataset in the jupyter notebook titled *CNN_vs_CS.ipynb*
