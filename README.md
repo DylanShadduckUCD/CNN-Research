@@ -35,3 +35,11 @@ password and allow the download to complete
 ```
 git clone https://github.com/DylanShadduckUCD/CNN-Research.git
 ```
+
+### Windows
+
+Download git bash to your machine. This application allows you to use
+a bash terminal (similar to Mac and Linux) and has the git package
+already installed. Now you can clone the repository following the 
+same steps as outlined in the Mac/Linux section
+
