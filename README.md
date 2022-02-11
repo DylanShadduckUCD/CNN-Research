@@ -210,3 +210,35 @@ if you are running on google colab.
 
 ### CNN Evaluation
 
+Evaluating this CNN is done by comparing the prediction results to that of simple
+linear interpolation. The data we are attempting to impute has a high degree of
+variability and linear interpolation will likely suffer. For small sections of 
+missing data linear interpolation will likely perform better, but as the number 
+of missing data points grows and the size of the hole to be filled in expands,
+linear interpolation will start to miss key aspects of the data's underlying
+patterns. 
+
+The metrics by which we will compare the two methods are Mean Squared Error (MSE)
+and Mean Absolute Percent Error (MAPE). MSE is a measure of the error placing 
+a higher emphasis on larger errors. MAPE weights errors according to the ground
+truth. As the ground truth decreases, the effects of small errors are amplified.
+
+Evaluating these two methods on the test dataset shows that the CNN prediction 
+is highly favorable over the linear interpoltation method when 20 percent of the
+data is missing. The missing data is all sequential, as in all the missing data
+points are grouped together along the x axis (time). This method of masking the
+data is meant to replicate the manner in which data is actually missing from this
+dataset; there are large sections of the dataset missing all sequentially. This
+could be for any number of reasons and can likely be due to external factors such
+as power outages or the sampling method is hindered in some way for some extended
+amount of time. For missing data such as this, I believe that even higher missing
+rates would further favor CNN predictions and for very low missing rates (< 10%)
+linear interpolation might be favored.
+
+Some results from 20 percent missing rate are shown below. The green line in the
+plots show the ground truth for a given 500 sample window. The orange line
+represents the predicition according to linear interpolation and the blue line 
+is the full prediction from the CNN. In practice, the predicition from the CNN
+will only be used for the region that data is actually missing.
+
+![predictions](/images/cnn_vs_lin_predictions.png)
