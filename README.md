@@ -196,4 +196,17 @@ ability. In practice these two networks are encompassed into a single neural net
 The model I have designed utilizes convolutional layers for compressing data and 
 convoltion transpose layers for uncompressing data. The structure used in this 
 research can be seen below. 
+
+
 ![cnn_structure](/images/cnn_layers.png)
+
+### CNN Training
+
+The CNN is trained using the fit method of a TensorFlow model class. This method
+takes many input parameters, but the key ones here are the training dataset and
+the number of epochs to train the model on this set. On my local machine this 
+step only takes a few minutes. Time may vary depending on the system used or
+if you are running on google colab.
+
+### CNN Evaluation
+
