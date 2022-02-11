@@ -178,3 +178,22 @@ to train the CNN.
 
 Finally the data is split into two sets: one for training and another for testing.
 
+### CNN Design
+
+This convolutional neural network is designed to fill in missing data for a single
+station of salinity data. The location of the missing region to be filled in by the
+network is not fixed, so for any window of 500 samples, any amount of data can be 
+missing and the network will attempt to fill in as best it can. To accomplish this
+task, the output of the neural network must be the same shape as the original 
+500 sample data input. This way, any data in any position can be imputed/filled in
+without altering the structure of the neural network. A network that has the same
+shape at the output and input is generally known as an autoencoder. This name derives
+from a symmetrical structure of "two" networks. The first "network" is the encoder 
+structure that takes an input and compresses the information by reducing the dimension
+of the input. The second "network" performs the inverse operation. It takes compressed
+or "encoded" information and recreates the original information to the best of its
+ability. In practice these two networks are encompassed into a single neural network.
+The model I have designed utilizes convolutional layers for compressing data and 
+convoltion transpose layers for uncompressing data. The structure used in this 
+research can be seen below. 
+![cnn_structure](/images/cnn_layers.png)
